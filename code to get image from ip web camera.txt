@@ -1,0 +1,11 @@
+#Code changed to connect Ip web camera through WiFi or hotspot:-
+
+
+import urllib
+url='http://192.168.43.1:8080/shot.jpg'
+
+imgResp=urllib.urlopen(url)
+    imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
+    img=cv2.imdecode(imgNp,-1)
+
+#This code was put instead of #cam=cv2.VideoCapture(0); in both dataSetCreater.py and detector.py
